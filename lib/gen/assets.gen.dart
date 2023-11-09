@@ -12,10 +12,6 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/Icon ionic-ios-add.png
-  AssetGenImage get iconIonicIosAdd =>
-      const AssetGenImage('assets/icons/Icon ionic-ios-add.png');
-
   /// File path: assets/icons/back_arrow.png
   AssetGenImage get backArrow =>
       const AssetGenImage('assets/icons/back_arrow.png');
@@ -23,9 +19,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/city_flag.png
   AssetGenImage get cityFlag =>
       const AssetGenImage('assets/icons/city_flag.png');
-
-  /// File path: assets/icons/img.png
-  AssetGenImage get img => const AssetGenImage('assets/icons/img.png');
 
   /// File path: assets/icons/lock.png
   AssetGenImage get lock => const AssetGenImage('assets/icons/lock.png');
@@ -43,26 +36,25 @@ class $AssetsIconsGen {
   $AssetsIconsSvgGen get svg => const $AssetsIconsSvgGen();
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-        iconIonicIosAdd,
-        backArrow,
-        cityFlag,
-        img,
-        lock,
-        person,
-        phone,
-        saudiFlag
-      ];
+  List<AssetGenImage> get values =>
+      [backArrow, cityFlag, lock, person, phone, saudiFlag];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/locations.png
+  AssetGenImage get locations =>
+      const AssetGenImage('assets/images/locations.png');
 
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
   /// File path: assets/images/potato.png
   AssetGenImage get potato => const AssetGenImage('assets/images/potato.png');
+
+  /// File path: assets/images/pubbles.png
+  AssetGenImage get pubbles => const AssetGenImage('assets/images/pubbles.png');
 
   /// File path: assets/images/side_image.png
   AssetGenImage get sideImage =>
@@ -72,18 +64,55 @@ class $AssetsImagesGen {
   AssetGenImage get splashBg =>
       const AssetGenImage('assets/images/splash_bg.png');
 
+  /// File path: assets/images/visa.png
+  AssetGenImage get visa => const AssetGenImage('assets/images/visa.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [logo, potato, sideImage, splashBg];
+  List<AssetGenImage> get values =>
+      [locations, logo, potato, pubbles, sideImage, splashBg, visa];
 }
 
 class $AssetsIconsSvgGen {
   const $AssetsIconsSvgGen();
 
-  /// File path: assets/icons/svg/cart.svg
-  String get cart => 'assets/icons/svg/cart.svg';
+  /// File path: assets/icons/svg/Arrow-right.svg
+  String get arrowRight => 'assets/icons/svg/Arrow-right.svg';
+
+  /// File path: assets/icons/svg/about_app.svg
+  String get aboutApp => 'assets/icons/svg/about_app.svg';
+
+  /// File path: assets/icons/svg/camera.svg
+  String get camera => 'assets/icons/svg/camera.svg';
+
+  /// File path: assets/icons/svg/cart_bag.svg
+  String get cartBag => 'assets/icons/svg/cart_bag.svg';
+
+  /// File path: assets/icons/svg/cart_shopping.svg
+  String get cartShopping => 'assets/icons/svg/cart_shopping.svg';
+
+  /// File path: assets/icons/svg/change_language.svg
+  String get changeLanguage => 'assets/icons/svg/change_language.svg';
+
+  /// File path: assets/icons/svg/check.svg
+  String get check => 'assets/icons/svg/check.svg';
+
+  /// File path: assets/icons/svg/condition.svg
+  String get condition => 'assets/icons/svg/condition.svg';
+
+  /// File path: assets/icons/svg/contant_us.svg
+  String get contantUs => 'assets/icons/svg/contant_us.svg';
+
+  /// File path: assets/icons/svg/edit.svg
+  String get edit => 'assets/icons/svg/edit.svg';
 
   /// File path: assets/icons/svg/fav.svg
   String get fav => 'assets/icons/svg/fav.svg';
+
+  /// File path: assets/icons/svg/favourite.svg
+  String get favourite => 'assets/icons/svg/favourite.svg';
+
+  /// File path: assets/icons/svg/location.svg
+  String get location => 'assets/icons/svg/location.svg';
 
   /// File path: assets/icons/svg/main.svg
   String get main => 'assets/icons/svg/main.svg';
@@ -94,15 +123,77 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/my_orders.svg
   String get myOrders => 'assets/icons/svg/my_orders.svg';
 
+  /// File path: assets/icons/svg/notification_1.svg
+  String get notification1 => 'assets/icons/svg/notification_1.svg';
+
+  /// File path: assets/icons/svg/notification_3.svg
+  String get notification3 => 'assets/icons/svg/notification_3.svg';
+
   /// File path: assets/icons/svg/notifications.svg
   String get notifications => 'assets/icons/svg/notifications.svg';
+
+  /// File path: assets/icons/svg/pay.svg
+  String get pay => 'assets/icons/svg/pay.svg';
+
+  /// File path: assets/icons/svg/personal_information.svg
+  String get personalInformation => 'assets/icons/svg/personal_information.svg';
+
+  /// File path: assets/icons/svg/question.svg
+  String get question => 'assets/icons/svg/question.svg';
+
+  /// File path: assets/icons/svg/rate_app.svg
+  String get rateApp => 'assets/icons/svg/rate_app.svg';
+
+  /// File path: assets/icons/svg/remove.svg
+  String get remove => 'assets/icons/svg/remove.svg';
 
   /// File path: assets/icons/svg/search.svg
   String get search => 'assets/icons/svg/search.svg';
 
+  /// File path: assets/icons/svg/share_app.svg
+  String get shareApp => 'assets/icons/svg/share_app.svg';
+
+  /// File path: assets/icons/svg/suggestion.svg
+  String get suggestion => 'assets/icons/svg/suggestion.svg';
+
+  /// File path: assets/icons/svg/turn_off.svg
+  String get turnOff => 'assets/icons/svg/turn_off.svg';
+
+  /// File path: assets/icons/svg/wallet.svg
+  String get wallet => 'assets/icons/svg/wallet.svg';
+
   /// List of all assets
-  List<String> get values =>
-      [cart, fav, main, myAccount, myOrders, notifications, search];
+  List<String> get values => [
+        arrowRight,
+        aboutApp,
+        camera,
+        cartBag,
+        cartShopping,
+        changeLanguage,
+        check,
+        condition,
+        contantUs,
+        edit,
+        fav,
+        favourite,
+        location,
+        main,
+        myAccount,
+        myOrders,
+        notification1,
+        notification3,
+        notifications,
+        pay,
+        personalInformation,
+        question,
+        rateApp,
+        remove,
+        search,
+        shareApp,
+        suggestion,
+        turnOff,
+        wallet
+      ];
 }
 
 class Assets {

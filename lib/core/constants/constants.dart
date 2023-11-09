@@ -70,17 +70,17 @@ OutlinedButtonThemeData getMyOutlinedButtonTheme() {
   );
 }
 
-AppBarTheme getMyAppBarTheme() {
-  return AppBarTheme(
-    backgroundColor: Colors.white,
-    
-    elevation: 0,
-    titleTextStyle: TextStyle(
-      color: getMyMaterialColor(),
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
+  AppBarTheme getMyAppBarTheme() {
+    return AppBarTheme(
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      elevation: 0,
+      titleTextStyle: TextStyle(
+        color: getMyMaterialColor(),
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        
+      ),
       
-    ),
-    
-  );
+    );
 }

@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thimar/features/cart/model.dart';
+import 'package:thimar/views/about_app/cubit.dart';
+import 'package:thimar/views/about_app/states.dart';
 
 class AboutAppView extends StatefulWidget {
   const AboutAppView({super.key});
@@ -11,6 +15,9 @@ class AboutAppView extends StatefulWidget {
 
 class _AboutAppViewState extends State<AboutAppView> {
   @override
+  void initState() {
+    super.initState();
+   }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -28,45 +35,51 @@ class _AboutAppViewState extends State<AboutAppView> {
           ),
         ),
       ),
-      body: ListView(
-        children: <Widget>[
-          SizedBox(height: 26.5,),
-          Center(
-            child: Image.asset(
-              "assets/images/logo.png",
-              height: 160,
-              width: 160,
-              fit: BoxFit.fill,
+      body: BlocProvider(
+        create: (context) => AboutAppCubit()..getData(),
+        child: ListView(
+          children: <Widget>[
+            SizedBox(
+              height: 26.5,
             ),
-          ),
-          SizedBox(height: 25.5),
-          Padding(
-            padding: const EdgeInsets.only(right: 13, bottom: 13, left: 13),
-            child: Container(
-              child: Column(
-                children: [
-                  Text(
-                      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."),
-                  Text(
-                      "إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع."),
-                  Text(
-                      "ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النص العربى أن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق."),
-                  Text(
-                      "هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً."),
-                  Text(""),
-                  Text(
-                      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."),
-                  Text(
-                      "إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع."),
-                  Text(
-                      "ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النص العربى أن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق."),
-                  Text(
-                      "هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً."),
-                ],
+            Center(
+              child: Image.asset(
+                "assets/images/logo.png",
+                height: 160,
+                width: 160,
+                fit: BoxFit.fill,
               ),
             ),
-          ),
-        ],
+            SizedBox(height: 25.5),
+            Padding(
+              padding: const EdgeInsets.only(right: 13, bottom: 13, left: 13),
+              child: Container(
+                child: BlocBuilder<AboutAppCubit, AboutAppStates>(
+                  builder: (context, state) {
+                    if (state is AboutAppLoadingState) {
+                      return const Center(child: CircularProgressIndicator());
+                    } else if (state is AboutAppSuccessState) {
+                      return Column(
+                        children: [
+                          Text(
+                            state.data,
+                             style: TextStyle(
+                              color: Color(0xff828282),
+                              fontWeight: FontWeight.w300,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ],
+                      );
+                    } else {
+                      return const Text("Data Failed");
+                    }
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

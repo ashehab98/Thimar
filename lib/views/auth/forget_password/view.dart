@@ -16,7 +16,7 @@ class ForgetPaswwordView extends StatefulWidget {
 }
 
 class _ForgetPaswwordViewState extends State<ForgetPaswwordView> {
-  final phoneController = TextEditingController();
+  final phoneController = TextEditingController(text: '550011223344');
   final formKey = GlobalKey<FormState>();
   bool isLoading = false;
   void ForgetPassword() async {

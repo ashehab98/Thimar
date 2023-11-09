@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-
 import 'dart:async';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:thimar/core/logic/cache_helper.dart';
+import 'package:thimar/views/home/view.dart';
 
 import '../login/view.dart';
 
@@ -23,7 +24,8 @@ class _SplashViewState extends State<SplashView> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginView(),
+            builder: (context) =>
+                CacheHelper.isAuth() ? HomeView() : LoginView(),
           ));
     });
   }
@@ -63,14 +65,13 @@ class _SplashViewState extends State<SplashView> {
             ),
             Center(
               child: FadeInDownBig(
-                 child: Image.asset(
+                child: Image.asset(
                   "assets/images/logo.png",
                   height: 175,
                   width: 160,
                   fit: BoxFit.fill,
                 ),
               ),
-              
             ),
           ],
         ),

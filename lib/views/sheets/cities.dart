@@ -2,7 +2,11 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:thimar/models/cities.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thimar/features/cities/cubit.dart';
+import 'package:thimar/features/cities/states.dart';
+import 'package:thimar/features/cities/model.dart';
+
 
 class CitiesSheet extends StatefulWidget {
   const CitiesSheet({super.key});
@@ -12,54 +16,60 @@ class CitiesSheet extends StatefulWidget {
 }
 
 class _CitiesSheetState extends State<CitiesSheet> {
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
 
-  bool isLoading = true;
-  late GetCitiesData model;
-  void getData() async {
-    final response =
-        await Dio().get("https://thimar.amr.aait-d.com/api/cities/1");
-    model = GetCitiesData.fromJson(response.data);
-    
-    isLoading = false;
-    setState(() {});
-  }
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          SizedBox(height: 16,),
-          Text(
-            "اختر المدينة",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
-          isLoading
-              ? Expanded(
-                  child: Center(
-                    
-                   child: CircularProgressIndicator(),
-                  ),
-                ) 
-              : Expanded(
-                  child: ListView.builder(
-                    itemBuilder: (context, index) =>
-                        _ItemCity(model: model.list[index]),
-                    itemCount: model.list.length,
-                    padding: EdgeInsets.all(16),
+    return BlocProvider(
+      create: (context) => GetCitiesCubit(),
+      child: Builder(
+        builder: (context) {
+          GetCitiesCubit cubit = BlocProvider.of(context);
+          cubit.getData();
+          return Container(
+            color: Colors.white,
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 16,),
+                Text(
+                  "اختر المدينة",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
-        ],
+
+                BlocBuilder(
+                  bloc: cubit,
+                  builder: (context, state) {
+                  if(state is GetCitiesLoadingState) {
+                    return Expanded(
+                      child: Center(
+
+                        child: CircularProgressIndicator(),
+                      ),
+                    );
+                  }else if (state is GetCitiesSuccessState) {
+                   return Expanded(
+                      child: ListView.builder(
+                        itemBuilder: (context, index) =>
+                            _ItemCity(model: cubit.model.list[index]),
+                        itemCount: cubit.model.list.length,
+                        padding: EdgeInsets.all(16),
+                      ),
+                    );
+                  } else {
+                    return Text("Failed");
+                  }
+                  },
+                ),
+
+              ],
+            ),
+          );
+        }
       ),
     );
   }

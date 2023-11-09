@@ -16,7 +16,7 @@ class AppInput extends StatefulWidget {
     this.validator,
     this.isEnabled = true,
     required this.labelText,
-    required this.icon,
+     required this.icon,
     this.isPhone = false,
     this.paddingbuttom = 16,
     this.paddingtop = 0,
