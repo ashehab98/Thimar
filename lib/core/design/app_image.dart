@@ -5,8 +5,13 @@ class AppImage extends StatelessWidget {
   final String path;
   final double? height, width;
   final BoxFit fit;
+  final Color? color;
   const AppImage(this.path,
-      {super.key, this.height, this.width, this.fit = BoxFit.scaleDown});
+      {super.key,
+      this.height,
+      this.width,
+      this.fit = BoxFit.scaleDown,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +21,15 @@ class AppImage extends StatelessWidget {
         fit: fit,
         height: height,
         width: width,
-       );
+        color: color,
+      );
     } else if (path.startsWith("http")) {
       return Image.network(
         path,
         fit: fit,
         height: height,
         width: width,
+        color: color,
       );
     } else {
       return Image.asset(
@@ -30,6 +37,7 @@ class AppImage extends StatelessWidget {
         height: height,
         width: width,
         fit: fit,
+        color: color,
       );
     }
   }

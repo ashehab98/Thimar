@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:thimar/features/cart/model.dart';
-import 'package:thimar/views/about_app/cubit.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+ import 'package:thimar/views/about_app/cubit.dart';
 import 'package:thimar/views/about_app/states.dart';
 
 class AboutAppView extends StatefulWidget {
@@ -26,8 +26,9 @@ class _AboutAppViewState extends State<AboutAppView> {
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
-          icon: Image.asset(
+          onPressed: () {
+            Navigator.pop(context);
+          },          icon: Image.asset(
             "assets/icons/back_arrow.png",
             height: 32,
             width: 32,
@@ -61,9 +62,9 @@ class _AboutAppViewState extends State<AboutAppView> {
                     } else if (state is AboutAppSuccessState) {
                       return Column(
                         children: [
-                          Text(
+                          HtmlWidget(
                             state.data,
-                             style: TextStyle(
+                            textStyle: TextStyle(
                               color: Color(0xff828282),
                               fontWeight: FontWeight.w300,
                               fontSize: 15,

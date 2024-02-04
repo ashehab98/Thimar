@@ -22,11 +22,11 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     Timer(Duration(seconds: 1), () {
       Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                CacheHelper.isAuth() ? HomeView() : LoginView(),
-          ));
+        context,
+        MaterialPageRoute(
+          builder: (context) => CacheHelper.isAuth() ? HomeView() : LoginView(),
+        ),
+      );
     });
   }
 

@@ -217,10 +217,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 child: IconButton(
                                   padding: const EdgeInsets.all(0),
                                   onPressed: () {
-                                    if (count > 1) {
-                                      count--;
-                                      setState(() {});
-                                    }
+                                      if (count > 1) {
+                                        count--;
+                                        setState(() {});
+                                      }
                                   },
                                   icon: const Icon(Icons.remove),
                                   color: Theme.of(context).primaryColor,
@@ -310,7 +310,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                     height: 400.h,
                     width: double.infinity,
                     child: ListView.separated(
+
                         physics: const NeverScrollableScrollPhysics(),
+
                         scrollDirection: Axis.horizontal,
                         itemCount: state.list.data.length,
                         separatorBuilder: (context, index) => SizedBox(

@@ -72,14 +72,33 @@ class $AssetsImagesGen {
       [locations, logo, potato, pubbles, sideImage, splashBg, visa];
 }
 
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/ar.json
+  String get ar => 'assets/translations/ar.json';
+
+  /// File path: assets/translations/en.json
+  String get en => 'assets/translations/en.json';
+
+  /// List of all assets
+  List<String> get values => [ar, en];
+}
+
 class $AssetsIconsSvgGen {
   const $AssetsIconsSvgGen();
+
+  /// File path: assets/icons/svg/Arrow - Right 2.svg
+  String get arrowRight2 => 'assets/icons/svg/Arrow - Right 2.svg';
 
   /// File path: assets/icons/svg/Arrow-right.svg
   String get arrowRight => 'assets/icons/svg/Arrow-right.svg';
 
   /// File path: assets/icons/svg/about_app.svg
   String get aboutApp => 'assets/icons/svg/about_app.svg';
+
+  /// File path: assets/icons/svg/calender.svg
+  String get calender => 'assets/icons/svg/calender.svg';
 
   /// File path: assets/icons/svg/camera.svg
   String get camera => 'assets/icons/svg/camera.svg';
@@ -116,6 +135,12 @@ class $AssetsIconsSvgGen {
 
   /// File path: assets/icons/svg/main.svg
   String get main => 'assets/icons/svg/main.svg';
+
+  /// File path: assets/icons/svg/mastercard.svg
+  String get mastercard => 'assets/icons/svg/mastercard.svg';
+
+  /// File path: assets/icons/svg/money.svg
+  String get money => 'assets/icons/svg/money.svg';
 
   /// File path: assets/icons/svg/my_account.svg
   String get myAccount => 'assets/icons/svg/my_account.svg';
@@ -156,16 +181,24 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/suggestion.svg
   String get suggestion => 'assets/icons/svg/suggestion.svg';
 
+  /// File path: assets/icons/svg/time.svg
+  String get time => 'assets/icons/svg/time.svg';
+
   /// File path: assets/icons/svg/turn_off.svg
   String get turnOff => 'assets/icons/svg/turn_off.svg';
+
+  /// File path: assets/icons/svg/visa.svg
+  String get visa => 'assets/icons/svg/visa.svg';
 
   /// File path: assets/icons/svg/wallet.svg
   String get wallet => 'assets/icons/svg/wallet.svg';
 
   /// List of all assets
   List<String> get values => [
+        arrowRight2,
         arrowRight,
         aboutApp,
+        calender,
         camera,
         cartBag,
         cartShopping,
@@ -178,6 +211,8 @@ class $AssetsIconsSvgGen {
         favourite,
         location,
         main,
+        mastercard,
+        money,
         myAccount,
         myOrders,
         notification1,
@@ -191,7 +226,9 @@ class $AssetsIconsSvgGen {
         search,
         shareApp,
         suggestion,
+        time,
         turnOff,
+        visa,
         wallet
       ];
 }
@@ -201,6 +238,7 @@ class Assets {
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {

@@ -5,13 +5,14 @@ import 'package:thimar/core/design/app_image.dart';
 import '../../gen/assets.gen.dart';
 
 class MyAccountButton extends StatefulWidget {
-   final String text, image;
-   final VoidCallback onPress;
+  final String text, image;
+  // final VoidCallback onPress;
 
   const MyAccountButton({
     super.key,
-     required this.text,
-    required this.image, required this.onPress,
+    required this.text,
+    required this.image,
+    // required this.onPress,
   });
 
   @override
@@ -25,10 +26,14 @@ class _MyAccountButtonState extends State<MyAccountButton> {
       height: 48.h,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Row(children: [
-          AppImage(widget.image,height: 18.h,width: 18.w,),
+          AppImage(
+            widget.image,
+            height: 18.h,
+            width: 18.w,
+          ),
           SizedBox(width: 7.w),
           Text(
-          widget.text,
+            widget.text,
             style: TextStyle(
               fontSize: 13.sp,
               fontWeight: FontWeight.bold,
@@ -36,13 +41,10 @@ class _MyAccountButtonState extends State<MyAccountButton> {
             ),
           ),
         ]),
-        IconButton(
-          onPressed: () {widget.onPress;},
-          icon: AppImage(
-           Assets.icons.svg.arrowRight,
-             width: 18.w,
-            height: 18.w,
-          ),
+        AppImage(
+          Assets.icons.svg.arrowRight,
+          width: 18.w,
+          height: 18.w,
         ),
       ]),
     );

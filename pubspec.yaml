@@ -49,9 +49,15 @@ dependencies:
   geocoding: ^2.1.1
   search_page: ^2.3.0
   flutter_rating_bar: ^4.0.1
-  firebase_messaging: ^14.7.3
+  firebase_messaging: ^14.7.5
   firebase_core: ^2.21.0
   firebase_auth: ^4.12.1
+  flutter_widget_from_html:
+  video_player: ^2.8.1
+  audioplayers: ^5.2.1
+  easy_localization: ^3.0.3
+  kiwi: ^4.1.0
+  url_launcher: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +89,7 @@ flutter:
     - assets/icons/
     - assets/icons/svg/
     - assets/fonts/
+    - assets/translations/
 
     
   # An image asset can refer to one or more resolution-specific "variants", see

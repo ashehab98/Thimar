@@ -17,7 +17,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   int currentIndex = 0;
 
   List<Widget> pages = [
@@ -59,7 +58,6 @@ class _HomeViewState extends State<HomeView> {
         type: BottomNavigationBarType.fixed,
         items: List.generate(
           icons.length,
-
           (index) => BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 icons[index],

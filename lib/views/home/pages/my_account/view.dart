@@ -7,7 +7,12 @@ import 'package:thimar/core/logic/cache_helper.dart';
 import 'package:thimar/core/logic/helper_methods.dart';
 import 'package:thimar/features/logout/cubit.dart';
 import 'package:thimar/features/logout/states.dart';
+import 'package:thimar/views/about_app/view.dart';
+import 'package:thimar/views/addresses/view.dart';
+import 'package:thimar/views/faqs/view.dart';
 import 'package:thimar/views/home/pages/main/view.dart';
+import 'package:thimar/views/political_privacy/view.dart';
+import 'package:thimar/views/profile/profile_view.dart';
 
 import '../../../../gen/assets.gen.dart';
 
@@ -88,26 +93,36 @@ class _MyAccountPageState extends State<MyAccountPage> {
                         borderRadius: BorderRadius.circular(17.r),
                       ),
                       child: Column(children: [
-                        MyAccountButton(
-                          text: "البيانات الشخصية",
-                          image: Assets.icons.svg.personalInformation,
-                          onPress: () {},
+                        InkWell(
+                          child: MyAccountButton(
+                            text: "البيانات الشخصية",
+                            image: Assets.icons.svg.personalInformation,
+
+                          ),
+                          onTap: () {
+                            navigateTo(ProfileView());
+
+                          },
                         ),
                         MyAccountButton(
                           text: "المحفظة",
                           image: Assets.icons.svg.wallet,
-                          onPress: () {},
-                        ),
-                        MyAccountButton(
-                          text: "العناوين",
-                          image: Assets.icons.svg.location,
-                          onPress: () {},
+                         ),
+                        InkWell(
+                          child: MyAccountButton(
+                            text: "العناوين",
+                            image: Assets.icons.svg.location,
+
+                          ),
+                          onTap: () {
+                            navigateTo(AddressesView());
+
+                          },
                         ),
                         MyAccountButton(
                           text: "الدفع",
                           image: Assets.icons.svg.pay,
-                          onPress: () {},
-                        ),
+                         ),
                       ]),
                     ),
                     SizedBox(height: 10.h),
@@ -117,31 +132,39 @@ class _MyAccountPageState extends State<MyAccountPage> {
                         borderRadius: BorderRadius.circular(17.r),
                       ),
                       child: Column(children: [
-                        MyAccountButton(
-                          text: "أسئلة متكررة",
-                          image: Assets.icons.svg.question,
-                          onPress: () {},
+                        InkWell(
+                          child: MyAccountButton(
+                            text: "أسئلة متكررة",
+                            image: Assets.icons.svg.question,
+
+                          ),
+                          onTap: () {
+                              navigateTo(FaqsView());
+                          },
                         ),
-                        MyAccountButton(
-                          text: "سياسة الخصوصية",
-                          image: Assets.icons.svg.check,
-                          onPress: () {},
+                        InkWell(
+                          child: MyAccountButton(
+                            text: "سياسة الخصوصية",
+                            image: Assets.icons.svg.check,
+
+                          ),
+                          onTap: () {
+                            navigateTo(PoliticalPrivacyView());
+
+                          },
                         ),
                         MyAccountButton(
                           text: "تواصل معنا",
                           image: Assets.icons.svg.contantUs,
-                          onPress: () {},
-                        ),
+                         ),
                         MyAccountButton(
                           text: "الشكاوي والأقتراحات",
                           image: Assets.icons.svg.suggestion,
-                          onPress: () {},
-                        ),
+                         ),
                         MyAccountButton(
                           text: "مشاركة التطبيق",
                           image: Assets.icons.svg.shareApp,
-                          onPress: () {},
-                        ),
+                         ),
                       ]),
                     ),
                     SizedBox(height: 10.h),
@@ -151,33 +174,36 @@ class _MyAccountPageState extends State<MyAccountPage> {
                         borderRadius: BorderRadius.circular(17.r),
                       ),
                       child: Column(children: [
-                        MyAccountButton(
-                          text: "عن التطبيق",
-                          image: Assets.icons.svg.aboutApp,
-                          onPress: () {},
+                        InkWell(
+                          child: MyAccountButton(
+                            text: "عن التطبيق",
+                            image: Assets.icons.svg.aboutApp,
+
+                          ),
+                          onTap: () {
+                            navigateTo(AboutAppView());
+
+                          },
                         ),
                         MyAccountButton(
                           text: "تغيير اللغة",
                           image: Assets.icons.svg.changeLanguage,
-                          onPress: () {},
-                        ),
+                         ),
                         MyAccountButton(
                           text: "الشروط والأحكام",
                           image: Assets.icons.svg.condition,
-                          onPress: () {},
-                        ),
+                         ),
                         MyAccountButton(
                           text: "تقييم التطبيق",
                           image: Assets.icons.svg.rateApp,
-                          onPress: () {},
-                        ),
+                         ),
                       ]),
                     ),
                     SizedBox(height: 10.h),
                     GestureDetector(
-onTap: (){
-  LogOutCubit().logOut();
-},
+                      onTap: () {
+                        LogOutCubit().logOut();
+                      },
                       child: Container(
                         height: 48.h,
                         decoration: BoxDecoration(
@@ -187,11 +213,7 @@ onTap: (){
                           builder: (context, state) => MyAccountButton(
                             text: "تسجيل الخروج",
                             image: Assets.icons.svg.turnOff,
-                            onPress: () {
-
-
-                            },
-                          ),
+                           ),
                         ),
                       ),
                     ),

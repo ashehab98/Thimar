@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:thimar/core/design/app_image.dart';
 import 'package:thimar/core/design/app_input.dart';
+import 'package:thimar/core/logic/helper_methods.dart';
 import 'package:thimar/gen/assets.gen.dart';
+import 'package:thimar/views/home/pages/my_account/view.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -29,8 +31,9 @@ class _ProfileViewState extends State<ProfileView> {
             color: Theme.of(context).primaryColor.withOpacity(.13),
           ),
           child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.pop(context);
+              },              icon: Icon(Icons.arrow_back_ios),
               color: Theme.of(context).primaryColor),
         ),
       ),
@@ -46,14 +49,13 @@ class _ProfileViewState extends State<ProfileView> {
                   width: 85.h,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
-
                     borderRadius: BorderRadius.circular(15.r),
                   ),
                   child: Stack(
                     children: [
                       ColorFiltered(
-                        
-                        colorFilter: ColorFilter.mode(Colors.black.withOpacity(.32), BlendMode.darken),
+                        colorFilter: ColorFilter.mode(
+                            Colors.black.withOpacity(.32), BlendMode.darken),
                         child: AppImage(
                           Assets.images.potato.path,
                           height: 85.h,

@@ -7,7 +7,6 @@ import 'package:thimar/features/cities/cubit.dart';
 import 'package:thimar/features/cities/states.dart';
 import 'package:thimar/features/cities/model.dart';
 
-
 class CitiesSheet extends StatefulWidget {
   const CitiesSheet({super.key});
 
@@ -16,43 +15,39 @@ class CitiesSheet extends StatefulWidget {
 }
 
 class _CitiesSheetState extends State<CitiesSheet> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetCitiesCubit(),
-      child: Builder(
-        builder: (context) {
-          GetCitiesCubit cubit = BlocProvider.of(context);
-          cubit.getData();
-          return Container(
-            color: Colors.white,
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: 16,),
-                Text(
-                  "اختر المدينة",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor,
-                  ),
+      child: Builder(builder: (context) {
+        GetCitiesCubit cubit = BlocProvider.of(context);
+        cubit.getData();
+        return Container(
+          color: Colors.white,
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 16,
+              ),
+              Text(
+                "اختر المدينة",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).primaryColor,
                 ),
-
-                BlocBuilder(
-                  bloc: cubit,
-                  builder: (context, state) {
-                  if(state is GetCitiesLoadingState) {
+              ),
+              BlocBuilder(
+                bloc: cubit,
+                builder: (context, state) {
+                  if (state is GetCitiesLoadingState) {
                     return Expanded(
                       child: Center(
-
                         child: CircularProgressIndicator(),
                       ),
                     );
-                  }else if (state is GetCitiesSuccessState) {
-                   return Expanded(
+                  } else if (state is GetCitiesSuccessState) {
+                    return Expanded(
                       child: ListView.builder(
                         itemBuilder: (context, index) =>
                             _ItemCity(model: cubit.model.list[index]),
@@ -63,14 +58,12 @@ class _CitiesSheetState extends State<CitiesSheet> {
                   } else {
                     return Text("Failed");
                   }
-                  },
-                ),
-
-              ],
-            ),
-          );
-        }
-      ),
+                },
+              ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:thimar/core/logic/helper_methods.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddAddressView extends StatefulWidget {
   const AddAddressView({super.key});
@@ -30,17 +31,16 @@ class _AddAddressViewState extends State<AddAddressView> {
   String? myAddress, myMarkerLocation;
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text("إضافة عنوان"),
         leading: Container(
-          height: 32,
-          width: 32,
-          padding: EdgeInsets.only(right: 5),
-          margin: EdgeInsets.all(8),
+          height: 32.h,
+          width: 32.w,
+          padding: EdgeInsets.only(right: 5.w),
+          margin: EdgeInsets.all(8.r),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(9),
+            borderRadius: BorderRadius.circular(9.r),
             color: Theme.of(context).primaryColor.withOpacity(.13),
           ),
           child: IconButton(
@@ -51,7 +51,7 @@ class _AddAddressViewState extends State<AddAddressView> {
       ),
       body: Column(children: [
         SizedBox(
-          height: 400,
+          height: 400.h,
           child: GoogleMap(
             circles: {
               Circle(
@@ -66,8 +66,9 @@ class _AddAddressViewState extends State<AddAddressView> {
               _controller.complete(controller);
             },
             markers: markers,
-            onTap: (argument) async{
-              List<Placemark> placemarks = await placemarkFromCoordinates(argument.latitude, argument.longitude);
+            onTap: (argument) async {
+              List<Placemark> placemarks = await placemarkFromCoordinates(
+                  argument.latitude, argument.longitude);
               var element = placemarks.first;
               print(element.name);
               print(element.country);
@@ -78,13 +79,13 @@ class _AddAddressViewState extends State<AddAddressView> {
               print(element.street);
               print(element.thoroughfare);
               print(element.subThoroughfare);
-              myMarkerLocation = "${element.country},${element.name}/ ${element.street}";
+              myMarkerLocation =
+                  "${element.country},${element.name}/ ${element.street}";
               print("0000000000000000000000000000000000");
               markers.add(
                 Marker(
                   markerId: MarkerId("1"),
                   position: LatLng(argument.latitude, argument.longitude),
-
                 ),
               );
               setState(() {});
@@ -92,7 +93,7 @@ class _AddAddressViewState extends State<AddAddressView> {
               print(argument.longitude);
             },
             initialCameraPosition: CameraPosition(
-              target: LatLng(31.0191987, 31.3884559),
+              target: LatLng(31.0360543,31.3697129),
               zoom: 14,
             ),
           ),
@@ -100,10 +101,11 @@ class _AddAddressViewState extends State<AddAddressView> {
         if (myAddress != null) Text(myAddress!),
         if (myMarkerLocation != null) Text(myMarkerLocation!),
       ]),
-      floatingActionButton: FloatingActionButton(onPressed: () {
+      floatingActionButton: FloatingActionButton(child: Text("GO"),onPressed: () {
         goToLocation(
           location: LatLng(37.43296265331129, -122.08832357078792),
         );
+        
       }),
     );
   }
@@ -168,7 +170,7 @@ class _AddAddressViewState extends State<AddAddressView> {
     print(myPosition.longitude);
     print("****************************");
 
-    goToLocation(location: LatLng(myPosition.latitude,myPosition.longitude));
+    goToLocation(location: LatLng(myPosition.latitude, myPosition.longitude));
     return myPosition;
   }
 }

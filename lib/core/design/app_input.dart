@@ -40,7 +40,7 @@ class _AppInputState extends State<AppInput> {
       ),
       child: TextFormField(
         controller: widget.controller,
-        validator: widget.validator,
+          validator: widget.validator,
         enabled: widget.isEnabled,
         obscureText: isObscure && widget.isObscure,
         decoration: InputDecoration(
