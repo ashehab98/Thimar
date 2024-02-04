@@ -18,7 +18,7 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("تفاصيل الطلب"),
+          title: const Text("تفاصيل الطلب"),
           leading: Container(
             height: 32.h,
             width: 32.w,
@@ -32,14 +32,14 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 color: Theme.of(context).primaryColor),
           ),
         ),
         body: ListView(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 22.h),
             children: [
-              _Item(),
+              const _Item(),
               SizedBox(height: 16.h),
               Text(
                 "عنوان التوصيل",
@@ -50,7 +50,7 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
                 ),
               ),
               SizedBox(height: 19.h),
-              _Location(),
+              const _Location(),
               SizedBox(height: 16.h),
               Text(
                 "ملخص الطلب",
@@ -61,7 +61,7 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
                 ),
               ),
               SizedBox(height: 19.h),
-              _OrderSummary(),
+              const _OrderSummary(),
 
               AppButton(text: "إلغاء الطلب", onPress: () {
 
@@ -73,7 +73,7 @@ class _OrderDetailsViewState extends State<OrderDetailsView> {
 }
 
 class _Item extends StatefulWidget {
-  const _Item({super.key});
+  const _Item();
 
   @override
   State<_Item> createState() => _ItemState();
@@ -106,7 +106,7 @@ class _ItemState extends State<_Item> {
               style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontSize: 14.sp,
-                color: Color(0xff9C9C9C),
+                color: const Color(0xff9C9C9C),
               ),
             ),
           ]),
@@ -116,7 +116,7 @@ class _ItemState extends State<_Item> {
               width: 95.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7),
-                color: Color(0xffEDF5E6),
+                color: const Color(0xffEDF5E6),
               ),
               child: Center(
                 child: Text(
@@ -139,7 +139,7 @@ class _ItemState extends State<_Item> {
             ),
           ]),
         ]),
-        Divider(
+        const Divider(
           color: Color(0xffF3F3F3),
           thickness: .39,
         ),
@@ -148,7 +148,7 @@ class _ItemState extends State<_Item> {
             ...List.generate(
               3,
               (index) => Container(
-                margin: EdgeInsetsDirectional.only(end: 3),
+                margin: const EdgeInsetsDirectional.only(end: 3),
                 height: 25.h,
                 width: 25.w,
                 decoration: BoxDecoration(
@@ -161,11 +161,11 @@ class _ItemState extends State<_Item> {
               ),
             ),
             Container(
-              margin: EdgeInsetsDirectional.only(end: 3),
+              margin: const EdgeInsetsDirectional.only(end: 3),
               height: 25.h,
               width: 25.w,
               decoration: BoxDecoration(
-                color: Color(0xffEDF5E6),
+                color: const Color(0xffEDF5E6),
                 borderRadius: BorderRadius.circular(7.r),
                 border: Border.all(
                     width: .5,
@@ -191,16 +191,16 @@ class _ItemState extends State<_Item> {
               height: 24.h,
               width: 24.w,
               decoration: BoxDecoration(
-                color: Color(0xffEDF5E6),
+                color: const Color(0xffEDF5E6),
                 borderRadius: BorderRadius.circular(6.r),
                 border: Border.all(
                     width: .5,
                     color: Theme.of(context).primaryColor.withOpacity(.13)),
               ),
               child: IconButton(
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: 15,
                   ),
@@ -214,7 +214,7 @@ class _ItemState extends State<_Item> {
 }
 
 class _Location extends StatefulWidget {
-  const _Location({super.key});
+  const _Location();
 
   @override
   State<_Location> createState() => _LocationState();
@@ -245,7 +245,7 @@ class _LocationState extends State<_Location> {
           Text(
             "شقة 40",
             style: TextStyle(
-              color: Color(0xff999797),
+              color: const Color(0xff999797),
               fontSize: 12.sp,
               fontWeight: FontWeight.w400,
             ),
@@ -253,7 +253,7 @@ class _LocationState extends State<_Location> {
           Text(
             "شارع العليا الرياض 2521 السعودية",
             style: TextStyle(
-              color: Color(0xff000000),
+              color: const Color(0xff000000),
               fontSize: 12.sp,
               fontWeight: FontWeight.w300,
             ),
@@ -278,7 +278,7 @@ class _LocationState extends State<_Location> {
 }
 
 class _OrderSummary extends StatefulWidget {
-  const _OrderSummary({super.key});
+  const _OrderSummary();
 
   @override
   State<_OrderSummary> createState() => _OrderSummaryState();
@@ -295,7 +295,7 @@ class _OrderSummaryState extends State<_OrderSummary> {
       ),
       height: 167.h,
       decoration: BoxDecoration(
-        color: Color(0xffF3F8EE),
+        color: const Color(0xffF3F8EE),
         borderRadius: BorderRadius.circular(13.r),
       ),
       child: Column(children: [
@@ -337,7 +337,7 @@ class _OrderSummaryState extends State<_OrderSummary> {
             ),
           ),
         ]),
-        Divider(color: Color(0xffE2E2E2), thickness: .5),
+        const Divider(color: Color(0xffE2E2E2), thickness: .5),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text(
             "المجموع",
@@ -356,7 +356,7 @@ class _OrderSummaryState extends State<_OrderSummary> {
             ),
           ),
         ]),
-        Divider(color: Color(0xffE2E2E2), thickness: 1),
+        const Divider(color: Color(0xffE2E2E2), thickness: 1),
         Row(children: [
           Text(
             "تم الدفع بواسطة",

@@ -27,14 +27,14 @@ class SendCodeCubit extends Cubit<SendCodeStates> {
         "device_token": "test",
         "type": Platform.operatingSystem,
       });
-      if (response!.isSuccess) {
+      if (response.isSuccess) {
         // if (widget.isActive ) {
         //    navigateTo(LoginView());
         //} else {
         //navigateTo(NewPasswordView());
         //}
         showmessage(response.message, type: messageType.success);
-        navigateTo(LoginView());
+        navigateTo(const LoginView());
         //  navigateTo(
 
         //NewPasswordView(), انا اللى عاملها

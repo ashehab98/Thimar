@@ -21,7 +21,7 @@ class _CompleteOrderViewState extends State<CompleteOrderView> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("إتمام الطلب"),
+          title: const Text("إتمام الطلب"),
           leading: Container(
             height: 32.h,
             width: 32.w,
@@ -33,7 +33,7 @@ class _CompleteOrderViewState extends State<CompleteOrderView> {
             ),
             child: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 color: Theme.of(context).primaryColor),
           ),
         ),
@@ -151,7 +151,7 @@ class _CompleteOrderViewState extends State<CompleteOrderView> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
                     border: Border.all(
-                      color: Color(0xffF3F3F3),
+                      color: const Color(0xffF3F3F3),
                     ),
                   ),
                   child: Row(
@@ -176,7 +176,7 @@ class _CompleteOrderViewState extends State<CompleteOrderView> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
                     border: Border.all(
-                      color: Color(0xffF3F3F3),
+                      color: const Color(0xffF3F3F3),
                     ),
                   ),
                   child: Row(
@@ -261,7 +261,7 @@ class _CompleteOrderViewState extends State<CompleteOrderView> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(11.r),
                     border: Border.all(
-                      color: Color(0xffE9E9E9),
+                      color: const Color(0xffE9E9E9),
                     ),
                   ),
                   child: AppImage(Assets.icons.svg.visa),
@@ -273,7 +273,7 @@ class _CompleteOrderViewState extends State<CompleteOrderView> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(11.r),
                     border: Border.all(
-                      color: Color(0xffE9E9E9),
+                      color: const Color(0xffE9E9E9),
                     ),
                   ),
                   child: AppImage(Assets.icons.svg.mastercard),

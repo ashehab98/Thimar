@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thimar/core/logic/dio_helper.dart';
 import 'package:thimar/features/cities/states.dart';

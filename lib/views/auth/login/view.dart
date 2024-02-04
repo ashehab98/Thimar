@@ -6,19 +6,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kiwi/kiwi.dart';
-import 'package:thimar/core/logic/cache_helper.dart';
-import 'package:thimar/main.dart';
 import 'package:thimar/views/auth/login/cubit.dart';
-import 'package:thimar/views/auth/login/model.dart';
 import 'package:thimar/views/auth/login/states.dart';
-import 'package:thimar/views/auth/send_code/view.dart';
 
 import '../../../core/design/app_button.dart';
 import '../../../core/design/app_input.dart';
-import '../../../core/logic/dio_helper.dart';
 import '../../../core/logic/helper_methods.dart';
-import '../../home/pages/main/view.dart';
-import '../../home/view.dart';
 import '../forget_password/view.dart';
 import '../register/view.dart';
 

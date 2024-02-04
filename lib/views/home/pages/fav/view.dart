@@ -3,13 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/design/app_image.dart';
-import '../../../../core/logic/cache_helper.dart';
-import '../../../../core/logic/helper_methods.dart';
 import '../../../../features/fav_details/cubit.dart';
 import '../../../../features/fav_details/model.dart';
 import '../../../../features/fav_details/states.dart';
-import '../../../../features/products/cubit.dart';
-import '../../../product_details/product_details_view.dart';
 
 class FavPage extends StatefulWidget {
   const FavPage({super.key});
@@ -26,25 +22,25 @@ class _FavPageState extends State<FavPage> {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text("المفضلة"),
+            title: const Text("المفضلة"),
            ),
           body: ListView(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
               children: [
                 BlocBuilder<FavDetailsCubit, FavDetailsStates>(
                   builder: (context, state) {
                     if (state is FavDetailsLoadingState) {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     } else if (state is FavDetailsSuccessState) {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
 
                           GridView.builder(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             gridDelegate:
-                            SliverGridDelegateWithFixedCrossAxisCount(
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               crossAxisSpacing: 3,
                               mainAxisSpacing: 3,
@@ -57,7 +53,7 @@ class _FavPageState extends State<FavPage> {
                         ],
                       );
                     } else {
-                      return Text("Failed");
+                      return const Text("Failed");
                     }
                   },
                 ),
@@ -72,7 +68,7 @@ class _FavPageState extends State<FavPage> {
 class _FavDetailsItem extends StatefulWidget {
   final List<FavDetailsModel> model;
   final int index;
-  const _FavDetailsItem({super.key, required this.model, required this.index});
+  const _FavDetailsItem({required this.model, required this.index});
 
   @override
   State<_FavDetailsItem> createState() => __FavDetailsItemState();
@@ -83,7 +79,7 @@ class __FavDetailsItemState extends State<_FavDetailsItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(17.r),
       ),
@@ -136,7 +132,7 @@ class __FavDetailsItemState extends State<_FavDetailsItem> {
           SizedBox(height: 3.h),
           Text(
             "السعر / 1 ${widget.model[widget.index].unit}",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
               color: Color(0xff808080),
@@ -187,7 +183,7 @@ class __FavDetailsItemState extends State<_FavDetailsItem> {
               onPressed: () {
 
               },
-              child: Text(
+              child: const Text(
                 "أضف للسلة",
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),

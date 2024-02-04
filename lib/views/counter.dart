@@ -24,13 +24,13 @@ class _CounterViewState extends State<CounterView> {
                 CacheHelper.setCount(count);
                 setState(() {});
               },
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
                 count.toString(),
-                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
               ),
             ),
             FloatingActionButton(
@@ -41,15 +41,15 @@ class _CounterViewState extends State<CounterView> {
                   setState(() {});
                 }
               },
-              child: Icon(Icons.remove),
+              child: const Icon(Icons.remove),
             ),
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             FloatingActionButton(
               onPressed: () {
                 count = 0;
                 setState(() {});
               },
-              child: Text("clear"),
+              child: const Text("clear"),
             ),
           ],
         ),

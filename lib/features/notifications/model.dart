@@ -28,8 +28,8 @@ class Notifications {
   late final String body;
   late final String notifyType;
   late final Order order;
-  late final Null offer;
-  late final Null chat;
+  late final void offer;
+  late final void chat;
   late final String createdAt;
   late final String readAt;
   late final String image;
@@ -52,7 +52,7 @@ class Order {
   late final int orderId;
   late final int clientId;
   late final int driverId;
-  late final Null orderType;
+  late final void orderType;
   late final String orderStatus;
 
   Order.fromJson(Map<String, dynamic> json) {

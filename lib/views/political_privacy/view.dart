@@ -26,12 +26,12 @@ class _PoliticalPrivacyViewState extends State<PoliticalPrivacyView> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("سياسة الخصوصية"),
+          title: const Text("سياسة الخصوصية"),
           leading: Container(
             height: 32,
             width: 32,
-            padding: EdgeInsets.only(right: 5),
-            margin: EdgeInsets.all(8),
+            padding: const EdgeInsets.only(right: 5),
+            margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(9),
               color: Theme.of(context).primaryColor.withOpacity(.13),
@@ -40,7 +40,7 @@ class _PoliticalPrivacyViewState extends State<PoliticalPrivacyView> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 color: Theme.of(context).primaryColor),
           ),
         ),
@@ -58,7 +58,7 @@ class _PoliticalPrivacyViewState extends State<PoliticalPrivacyView> {
                       textStyle: TextStyle(
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w300,
-                        color: Color(0xff828282),
+                        color: const Color(0xff828282),
                       ),
                     ),
                   );

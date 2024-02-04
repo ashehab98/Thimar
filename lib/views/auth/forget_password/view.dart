@@ -25,7 +25,7 @@ class _ForgetPaswwordViewState extends State<ForgetPaswwordView> {
     final response = await DioHelper().sendData("forget_password", data: {
       "phone": phoneController.text,
     });
-    if (response!.isSuccess) {
+    if (response.isSuccess) {
       showmessage(response.message, type: messageType.success);
       navigateTo(SendCodeView(phone: phoneController.text, isActive: false));
     } else {

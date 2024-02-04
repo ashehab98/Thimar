@@ -20,7 +20,7 @@ class LogOutCubit extends Cubit<LogOutStates> {
       final model = LogOutData.fromJson(response.response!.data);
 
       emit(LogOutSuccessState());
-      navigateTo(SplashView());
+      navigateTo(const SplashView());
       CacheHelper.clear();
     } else {
       showmessage(response.message);

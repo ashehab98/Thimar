@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thimar/core/logic/dio_helper.dart';
-import 'package:thimar/features/cart/model.dart';
 import 'package:thimar/views/about_app/model.dart';
 import 'package:thimar/views/about_app/states.dart';
 
@@ -13,6 +12,8 @@ class AboutAppCubit extends Cubit<AboutAppStates>{
       final data = AboutAppData.fromJson(response.response!.data);
       emit(AboutAppSuccessState(data: data.data.about));
 
-    }else(AboutAppFailedState(msg: response.message));
+    }else {
+      (AboutAppFailedState(msg: response.message));
+    }
   }
 }

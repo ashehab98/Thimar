@@ -1,16 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, sized_box_for_whitespace, unused_local_variable, non_constant_identifier_names
 
-import 'dart:io';
 
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:thimar/core/design/app_button.dart';
-import 'package:thimar/views/auth/new_password/view.dart';
 import 'package:thimar/views/auth/send_code/cubit.dart';
 
-import '../../../core/logic/dio_helper.dart';
 import '../../../core/logic/helper_methods.dart';
 import '../login/view.dart';
 
@@ -87,7 +84,7 @@ class _SendCodeViewState extends State<SendCodeView> {
                         Row(
                           children: <Widget>[
                             Text(
-                              "${widget.phone}",
+                              widget.phone,
                               textDirection: TextDirection.ltr,
                               style: TextStyle(
                                 fontSize: 16,

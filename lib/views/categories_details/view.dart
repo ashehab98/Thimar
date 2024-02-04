@@ -4,13 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:thimar/features/categories_details/cubit.dart';
 import 'package:thimar/features/categories_details/model.dart';
 import 'package:thimar/features/categories_details/states.dart';
-import 'package:thimar/views/home/view.dart';
 
 import '../../core/design/app_image.dart';
 import '../../core/design/app_input.dart';
 import '../../core/logic/cache_helper.dart';
 import '../../core/logic/helper_methods.dart';
-import '../../features/products/cubit.dart';
 import '../../gen/assets.gen.dart';
 import '../product_details/product_details_view.dart';
 
@@ -31,12 +29,12 @@ class _CategoriesDetailsState extends State<CategoriesDetails> {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text("خضروات"),
+            title: const Text("خضروات"),
             leading: Container(
               height: 32.h,
               width: 32.w,
-              padding: EdgeInsets.only(right: 5),
-              margin: EdgeInsets.all(8),
+              padding: const EdgeInsets.only(right: 5),
+              margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(9.r),
                 color: Theme.of(context).primaryColor.withOpacity(.13),
@@ -44,14 +42,14 @@ class _CategoriesDetailsState extends State<CategoriesDetails> {
               child: IconButton(
                   onPressed: () {Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back_ios),
+                  icon: const Icon(Icons.arrow_back_ios),
                   color: Theme.of(context).primaryColor),
             ),
           ),
           body: ListView(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: AppInput(
                   labelText: "ابحث عن ماتريد؟",
                   icon: Assets.icons.svg.search,
@@ -60,15 +58,15 @@ class _CategoriesDetailsState extends State<CategoriesDetails> {
               BlocBuilder<CategoriesDetailsCubit, CategoriesDetailsStates>(
                 builder: (context, state) {
                   if (state is CategoriesDetailsLoadingState) {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   } else if (state is CategoriesDetailsSuccessState) {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         GridView.builder(
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             crossAxisSpacing: 3,
                             mainAxisSpacing: 3,
@@ -81,7 +79,7 @@ class _CategoriesDetailsState extends State<CategoriesDetails> {
                       ],
                     );
                   } else {
-                    return Text("Failed");
+                    return const Text("Failed");
                   }
                 },
               ),
@@ -95,7 +93,7 @@ class _CategoriesDetailsState extends State<CategoriesDetails> {
 
 class _ItemCategories extends StatefulWidget {
   final CategoriesDetailsModel model;
-  const _ItemCategories({super.key, required this.model});
+  const _ItemCategories({required this.model});
 
   @override
   State<_ItemCategories> createState() => _ItemCategoriesState();
@@ -107,7 +105,7 @@ class _ItemCategoriesState extends State<_ItemCategories> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(17.r),
       ),
@@ -161,7 +159,7 @@ class _ItemCategoriesState extends State<_ItemCategories> {
           SizedBox(height: 3.h),
           Text(
             "السعر / 1 ${widget.model.unit.name}",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
               color: Color(0xff808080),
@@ -215,7 +213,7 @@ class _ItemCategoriesState extends State<_ItemCategories> {
                 CacheHelper.getCount();
                 setState(() {});
               },
-              child: Text(
+              child: const Text(
                 "أضف للسلة",
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),

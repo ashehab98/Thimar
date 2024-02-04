@@ -11,7 +11,7 @@ class AppInput extends StatefulWidget {
 
   final double paddingbuttom, paddingtop;
   final FormFieldValidator? validator;
-  AppInput({
+  const AppInput({
     super.key,
     this.validator,
     this.isEnabled = true,

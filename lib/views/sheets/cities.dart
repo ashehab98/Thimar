@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thimar/features/cities/cubit.dart';
@@ -70,7 +69,7 @@ class _CitiesSheetState extends State<CitiesSheet> {
 
 class _ItemCity extends StatelessWidget {
   final CityModel model;
-  const _ItemCity({super.key, required this.model});
+  const _ItemCity({required this.model});
 
   @override
   Widget build(BuildContext context) {

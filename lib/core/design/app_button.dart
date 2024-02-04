@@ -25,7 +25,7 @@ class _AppBottomState extends State<AppButton> {
   @override
   Widget build(BuildContext context) {
     if (widget.isLoading) {
-      return Center(
+      return const Center(
         child: CircularProgressIndicator(),
       );
     }

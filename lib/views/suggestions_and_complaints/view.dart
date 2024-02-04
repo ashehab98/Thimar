@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:thimar/core/design/app_input.dart';
-import 'package:thimar/gen/assets.gen.dart';
 
 class SuggestionsAndComplaintsView extends StatelessWidget {
   const SuggestionsAndComplaintsView({super.key});

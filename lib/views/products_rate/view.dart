@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:thimar/core/design/app_input.dart';
 import 'package:thimar/gen/assets.gen.dart';
 
 class ProductRateView extends StatefulWidget {

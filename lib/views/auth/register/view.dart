@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:thimar/core/design/app_button.dart';
-import 'package:thimar/core/logic/dio_helper.dart';
 import 'package:thimar/gen/assets.gen.dart';
-import 'package:thimar/features/cities/model.dart';
 import 'package:thimar/views/auth/register/cubit.dart';
 import 'package:thimar/views/auth/register/states.dart';
 import 'package:thimar/views/sheets/cities.dart';
@@ -14,7 +12,6 @@ import 'package:thimar/views/sheets/cities.dart';
 import '../../../core/design/app_input.dart';
 import '../../../core/logic/helper_methods.dart';
 import '../login/view.dart';
-import '../send_code/view.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});

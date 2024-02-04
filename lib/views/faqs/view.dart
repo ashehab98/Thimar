@@ -8,7 +8,7 @@ import '../../core/design/app_image.dart';
 import '../../gen/assets.gen.dart';
 
 class FaqsView extends StatefulWidget {
-  FaqsView({super.key});
+  const FaqsView({super.key});
 
   @override
   State<FaqsView> createState() => _FaqsViewState();
@@ -24,7 +24,7 @@ class _FaqsViewState extends State<FaqsView> {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text("أسئلة متكررة"),
+            title: const Text("أسئلة متكررة"),
             leading: Container(
               height: 32.h,
               width: 32.w,
@@ -38,7 +38,7 @@ class _FaqsViewState extends State<FaqsView> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back_ios),
+                  icon: const Icon(Icons.arrow_back_ios),
                   color: Theme.of(context).primaryColor),
             ),
           ),
@@ -49,7 +49,7 @@ class _FaqsViewState extends State<FaqsView> {
                   return const Center(child: CircularProgressIndicator());
                 } else if (state is FaqsSuccessState) {
                   return ListView.separated(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (context, index) => Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -99,10 +99,10 @@ class _FaqsViewState extends State<FaqsView> {
                                 style: TextStyle(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w300,
-                                  color: Color(0xff828282),
+                                  color: const Color(0xff828282),
                                 ),
                               )
-                            : SizedBox.shrink(),
+                            : const SizedBox.shrink(),
                       ]),
                     ),
                     separatorBuilder: (context, index) =>

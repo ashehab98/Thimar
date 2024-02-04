@@ -17,7 +17,7 @@ class _SoundAppState extends State<SoundApp> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
         body: Column(
             children: [
@@ -54,7 +54,7 @@ class _ItemAudioState extends State<ItemAudio> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(widget.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.green),),
+          Text(widget.name,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.green),),
           FloatingActionButton(
             onPressed: () {
               if (audioPlayer.state == PlayerState.playing) {

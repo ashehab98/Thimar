@@ -29,7 +29,7 @@ class _NewPasswordViewState extends State<NewPasswordView> {
       "code": CodeController.text,
       "password": passwordController.text,
     });
-    if (response!.isSuccess) {
+    if (response.isSuccess) {
       showmessage(response.message, type: messageType.success);
       navigateTo(LoginView());
     } else {

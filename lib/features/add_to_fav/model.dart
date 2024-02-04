@@ -2,7 +2,7 @@ class AddToFavData {
 
   late final String status;
   late final String message;
-  late final Null data;
+  late final void data;
 
   AddToFavData.fromJson(Map<String, dynamic> json){
     status = json['status'];

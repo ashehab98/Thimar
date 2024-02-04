@@ -23,12 +23,12 @@ class _CartViewState extends State<CartView> {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text("السلة"),
+            title: const Text("السلة"),
             leading: Container(
               height: 32.h,
               width: 32.w,
-              padding: EdgeInsets.only(right: 5),
-              margin: EdgeInsets.all(8),
+              padding: const EdgeInsets.only(right: 5),
+              margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(9.r),
                 color: Theme.of(context).primaryColor.withOpacity(.13),
@@ -37,7 +37,7 @@ class _CartViewState extends State<CartView> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back_ios),
+                  icon: const Icon(Icons.arrow_back_ios),
                   color: Theme.of(context).primaryColor),
             ),
           ),
@@ -84,19 +84,19 @@ class _CartViewState extends State<CartView> {
                           height: 1.1.h,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w300,
-                          color: Color(0xffB9C9A8),
+                          color: const Color(0xffB9C9A8),
                         ),
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "عندك كوبون ؟ ادخل رقم الكوبون",
                         ),
                       ),
                     ),
                   ]),
                   Padding(
-                    padding: EdgeInsets.only(left: 8, top: 10.5),
+                    padding: const EdgeInsets.only(left: 8, top: 10.5),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Container(
+                      child: SizedBox(
                         height: 39.h,
                         width: 79.h,
                         child: AppButton(
@@ -119,14 +119,14 @@ class _CartViewState extends State<CartView> {
                 ),
                 SizedBox(height: 14.h),
                 Container(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 16,
                     right: 9,
                     top: 9,
                   ),
                   height: 135.h,
                   decoration: BoxDecoration(
-                    color: Color(0xffF3F8EE),
+                    color: const Color(0xffF3F8EE),
                     borderRadius: BorderRadius.circular(13),
                   ),
                   child:
@@ -173,7 +173,7 @@ class _CartViewState extends State<CartView> {
                             ),
                           ),
                         ]),
-                    Divider(color: Color(0xffE2E2E2)),
+                    const Divider(color: Color(0xffE2E2E2)),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -208,7 +208,7 @@ class _CartViewState extends State<CartView> {
 
 class _Cart extends StatefulWidget {
   final CartData model;
-  const _Cart({super.key, required this.model});
+  const _Cart({required this.model});
 
   @override
   State<_Cart> createState() => _CartState();
@@ -224,7 +224,7 @@ class _CartState extends State<_Cart> {
       itemCount: widget.model.data.length,
       itemBuilder: (context, index) {
         return Container(
-          padding: EdgeInsets.all(6),
+          padding: const EdgeInsets.all(6),
           height: 100.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.r),
@@ -255,7 +255,7 @@ class _CartState extends State<_Cart> {
                       color: Theme.of(context).primaryColor,
                     ),
                     children: [
-                      TextSpan(text: "\n"),
+                      const TextSpan(text: "\n"),
                       TextSpan(
                         text: "${widget.model.data[index].price} ر.س",
                         style: TextStyle(
@@ -267,7 +267,7 @@ class _CartState extends State<_Cart> {
                     ],
                   ),
                 ),
-                SizedBox(height: 6),
+                const SizedBox(height: 6),
                 Row(children: [
                   Stack(children: [
                     Container(

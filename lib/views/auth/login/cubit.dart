@@ -25,7 +25,7 @@ class LoginCubit extends Cubit<LoginStates> {
         "type": Platform.operatingSystem,
         "user_type": "client",
       });
-      if (response!.isSuccess) {
+      if (response.isSuccess) {
         final model = UserData.fromJson(response.response!.data);
         await CacheHelper.saveUserData(model.model);
         navigateTo(const HomeView());

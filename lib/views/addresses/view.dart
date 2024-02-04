@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:thimar/core/design/app_button.dart';
-import 'package:thimar/core/design/app_image.dart';
 import 'package:thimar/core/logic/helper_methods.dart';
 
-import '../../gen/assets.gen.dart';
 
 class AddressesView extends StatefulWidget {
   const AddressesView({super.key});
@@ -19,12 +16,12 @@ class _AddressesViewState extends State<AddressesView> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("العناوين"),
+          title: const Text("العناوين"),
           leading: Container(
             height: 32,
             width: 32,
-            padding: EdgeInsets.only(right: 5),
-            margin: EdgeInsets.all(8),
+            padding: const EdgeInsets.only(right: 5),
+            margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(9),
               color: Theme.of(context).primaryColor.withOpacity(.13),
@@ -33,15 +30,15 @@ class _AddressesViewState extends State<AddressesView> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 color: Theme.of(context).primaryColor),
           ),
         ),
-        body: ListView(padding: EdgeInsets.all(16), children: [
+        body: ListView(padding: const EdgeInsets.all(16), children: [
           ListView.separated(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemBuilder: (context, index) => _Addresses(),
+            itemBuilder: (context, index) => const _Addresses(),
             separatorBuilder: (context, index) => SizedBox(height: 20.h),
             itemCount: 4,
           ),
@@ -61,8 +58,8 @@ class _AddressesViewState extends State<AddressesView> {
           //   ),
           // ),
           ElevatedButton( onPressed:   () {
-            navigateTo(AddressesView());
-            }, child: Text("data"))
+            navigateTo(const AddressesView());
+            }, child: const Text("data"))
         ]),
       ),
     );
@@ -70,7 +67,7 @@ class _AddressesViewState extends State<AddressesView> {
 }
 
 class _Addresses extends StatefulWidget {
-  const _Addresses({super.key});
+  const _Addresses();
 
   @override
   State<_Addresses> createState() => _AddressesState();

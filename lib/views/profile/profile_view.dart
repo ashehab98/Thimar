@@ -1,12 +1,9 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:thimar/core/design/app_image.dart';
 import 'package:thimar/core/design/app_input.dart';
-import 'package:thimar/core/logic/helper_methods.dart';
 import 'package:thimar/gen/assets.gen.dart';
-import 'package:thimar/views/home/pages/my_account/view.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -20,12 +17,12 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("البيانات الشخصية"),
+        title: const Text("البيانات الشخصية"),
         leading: Container(
           height: 32,
           width: 32,
-          padding: EdgeInsets.only(right: 5),
-          margin: EdgeInsets.all(8),
+          padding: const EdgeInsets.only(right: 5),
+          margin: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(9),
             color: Theme.of(context).primaryColor.withOpacity(.13),
@@ -33,7 +30,7 @@ class _ProfileViewState extends State<ProfileView> {
           child: IconButton(
               onPressed: () {
                 Navigator.pop(context);
-              },              icon: Icon(Icons.arrow_back_ios),
+              },              icon: const Icon(Icons.arrow_back_ios),
               color: Theme.of(context).primaryColor),
         ),
       ),
@@ -77,7 +74,7 @@ class _ProfileViewState extends State<ProfileView> {
                   ),
                 ),
                 SizedBox(height: 3.h),
-                Text(
+                const Text(
                   "+96654787856",
                   textDirection: TextDirection.ltr,
                   style: TextStyle(

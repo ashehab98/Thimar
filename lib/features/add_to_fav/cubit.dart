@@ -13,7 +13,7 @@ class AddToFavCubit extends Cubit<AddToFavStates> {
     emit(AddToFavLoadingState());
     final response =
         await DioHelper().sendData("client/products/$id/add_to_favorite");
-    if (response!.isSuccess) {
+    if (response.isSuccess) {
       final model = AddToFavData.fromJson(response.response!.data);
       emit(AddToFavSuccessState());
     } else {

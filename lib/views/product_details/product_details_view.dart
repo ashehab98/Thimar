@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:thimar/core/design/app_image.dart';
-import 'package:thimar/core/logic/helper_methods.dart';
 import 'package:thimar/features/add_to_fav/cubit.dart';
 import 'package:thimar/features/product_details/cubit.dart';
 import 'package:thimar/features/rates/cubit.dart';
 import 'package:thimar/features/rates/states.dart';
 import 'package:thimar/gen/assets.gen.dart';
-import 'package:thimar/views/home/pages/fav/view.dart';
-import 'package:thimar/views/home/pages/main/view.dart';
 
 import '../../core/logic/cache_helper.dart';
 import '../rates/rates_view.dart';
@@ -112,7 +108,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "${state.list.data.title}",
+                            state.list.data.title,
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
@@ -242,7 +238,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                       SizedBox(width: 14.w),
                       Text(
-                        "${state.list.data.code}",
+                        state.list.data.code,
                         style: const TextStyle(
                           fontSize: 19,
                           fontWeight: FontWeight.w400,
@@ -306,7 +302,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   return const Center(child: CircularProgressIndicator());
                 } else if (state is RatesSuccessState &&
                     state.list.data.isNotEmpty) {
-                  return Container(
+                  return SizedBox(
                     height: 400.h,
                     width: double.infinity,
                     child: ListView.separated(
@@ -325,10 +321,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                               clientImage: state.list.data[index].clientImage,
                               value: state.list.data[index].value,
                               comment: state.list.data[index].comment);
+                          return null;
                         }),
                   );
                 } else {
-                  return Text("Data failed");
+                  return const Text("Data failed");
                 }
               }),
             ]),

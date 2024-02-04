@@ -12,7 +12,7 @@ class RatesCubit extends Cubit<RatesStates> {
     if (response.isSuccess) {
       final list = RatesData.fromJson(response.response!.data);
       emit(RatesSuccessState(list: list));
-      print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"+list.data.first.comment);
+      print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&${list.data.first.comment}");
 
     } else {
       emit(RatesFailedState(msg: response.message));

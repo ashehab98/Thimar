@@ -7,7 +7,7 @@ class LoginLoadingState extends LoginStates {}
 
 class LoginSuccessState extends LoginStates {
   LoginSuccessState(){
-    navigateTo(HomeView());
+    navigateTo(const HomeView());
   }
 
 }

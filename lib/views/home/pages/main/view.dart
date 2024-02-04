@@ -199,7 +199,7 @@ int count = 0;
 
 class _ItemProducts extends StatefulWidget {
   final ProductsModel model;
-  _ItemProducts({super.key, required this.model});
+  const _ItemProducts({required this.model});
 
   @override
   State<_ItemProducts> createState() => _ItemProductsState();
@@ -330,7 +330,7 @@ class _ItemProductsState extends State<_ItemProducts> {
 class _ItemCategory extends StatelessWidget {
   final CategoryModel model;
   final int index;
-  const _ItemCategory({super.key, required this.model, required this.index});
+  const _ItemCategory({required this.model, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -370,7 +370,7 @@ class _ItemCategory extends StatelessWidget {
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
-  MainAppBar({super.key });
+  const MainAppBar({super.key });
 
   @override
   Widget build(BuildContext context) {

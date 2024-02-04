@@ -18,6 +18,7 @@ class _AboutAppViewState extends State<AboutAppView> {
   void initState() {
     super.initState();
    }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

@@ -119,7 +119,7 @@ class _MyOrderspageState extends State<MyOrdersNowPage> {
 }
 
 class _Item extends StatefulWidget {
-  const _Item({super.key});
+  const _Item();
 
   @override
   State<_Item> createState() => _ItemState();
@@ -145,7 +145,7 @@ class _ItemState extends State<_Item> {
         child: Padding(
           padding:
               const EdgeInsets.only(left: 9, top: 5, right: 10, bottom: 13.5),
-          child: Container(
+          child: SizedBox(
             height: 108.5,
             child: Row(
               children: <Widget>[

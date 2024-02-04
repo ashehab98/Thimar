@@ -17,7 +17,7 @@ class TranslationView extends StatelessWidget {
                  String code = context.locale.languageCode == "en"?"ar":"en";
               context.setLocale(Locale(code),);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.language,
             ),
           ),

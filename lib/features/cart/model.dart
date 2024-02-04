@@ -45,21 +45,21 @@ class CartData {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['data'] = data.map((e)=>e.toJson()).toList();
-    _data['total_price_before_discount'] = totalPriceBeforeDiscount;
-    _data['total_discount'] = totalDiscount;
-    _data['total_price_with_vat'] = totalPriceWithVat;
-    _data['delivery_cost'] = deliveryCost;
-    _data['free_delivery_price'] = freeDeliveryPrice;
-    _data['vat'] = vat;
-    _data['is_vip'] = isVip;
-    _data['vip_discount_percentage'] = vipDiscountPercentage;
-    _data['min_vip_price'] = minVipPrice;
-    _data['vip_message'] = vipMessage;
-    _data['status'] = status;
-    _data['message'] = message;
-    return _data;
+    final data = <String, dynamic>{};
+    data['data'] = data.map((e)=>e.toJson()).toList();
+    data['total_price_before_discount'] = totalPriceBeforeDiscount;
+    data['total_discount'] = totalDiscount;
+    data['total_price_with_vat'] = totalPriceWithVat;
+    data['delivery_cost'] = deliveryCost;
+    data['free_delivery_price'] = freeDeliveryPrice;
+    data['vat'] = vat;
+    data['is_vip'] = isVip;
+    data['vip_discount_percentage'] = vipDiscountPercentage;
+    data['min_vip_price'] = minVipPrice;
+    data['vip_message'] = vipMessage;
+    data['status'] = status;
+    data['message'] = message;
+    return data;
   }
 }
 
@@ -95,15 +95,15 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['id'] = id;
-    _data['title'] = title;
-    _data['image'] = image;
-    _data['amount'] = amount;
-    _data['price_before_discount'] = priceBeforeDiscount;
-    _data['discount'] = discount;
-    _data['price'] = price;
-    _data['remaining_amount'] = remainingAmount;
-    return _data;
+    final data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['image'] = image;
+    data['amount'] = amount;
+    data['price_before_discount'] = priceBeforeDiscount;
+    data['discount'] = discount;
+    data['price'] = price;
+    data['remaining_amount'] = remainingAmount;
+    return data;
   }
 }

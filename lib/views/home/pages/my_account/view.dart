@@ -3,14 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:thimar/core/design/app_image.dart';
 import 'package:thimar/core/design/my_account_button.dart';
-import 'package:thimar/core/logic/cache_helper.dart';
 import 'package:thimar/core/logic/helper_methods.dart';
 import 'package:thimar/features/logout/cubit.dart';
 import 'package:thimar/features/logout/states.dart';
 import 'package:thimar/views/about_app/view.dart';
 import 'package:thimar/views/addresses/view.dart';
 import 'package:thimar/views/faqs/view.dart';
-import 'package:thimar/views/home/pages/main/view.dart';
 import 'package:thimar/views/political_privacy/view.dart';
 import 'package:thimar/views/profile/profile_view.dart';
 
@@ -34,7 +32,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
           child: Stack(children: [
             Scaffold(
               appBar: AppBar(
-                title: Text(
+                title: const Text(
                   "حسابي",
                   style: TextStyle(color: Colors.white),
                 ),
@@ -64,7 +62,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
                       ),
                     ),
                     SizedBox(height: 2.h),
-                    Text(
+                    const Text(
                       "محمد علي",
                       style: TextStyle(
                         color: Colors.white,
@@ -73,7 +71,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
                       ),
                     ),
                     SizedBox(height: 4.h),
-                    Text(
+                    const Text(
                       "+96654787856",
                       style: TextStyle(
                         color: Color(0xffA2D273),
@@ -100,7 +98,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
 
                           ),
                           onTap: () {
-                            navigateTo(ProfileView());
+                            navigateTo(const ProfileView());
 
                           },
                         ),
@@ -115,7 +113,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
 
                           ),
                           onTap: () {
-                            navigateTo(AddressesView());
+                            navigateTo(const AddressesView());
 
                           },
                         ),
@@ -139,7 +137,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
 
                           ),
                           onTap: () {
-                              navigateTo(FaqsView());
+                              navigateTo(const FaqsView());
                           },
                         ),
                         InkWell(
@@ -149,7 +147,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
 
                           ),
                           onTap: () {
-                            navigateTo(PoliticalPrivacyView());
+                            navigateTo(const PoliticalPrivacyView());
 
                           },
                         ),
@@ -181,7 +179,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
 
                           ),
                           onTap: () {
-                            navigateTo(AboutAppView());
+                            navigateTo(const AboutAppView());
 
                           },
                         ),

@@ -31,7 +31,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
         "city_id": selectedCity!.id,
         "country_id": 1,
       });
-      if (response!.isSuccess) {
+      if (response.isSuccess) {
         showmessage(response.message, type: messageType.success);
         navigateTo(SendCodeView(
           isActive: true,

@@ -13,8 +13,8 @@ class MyOrdersView extends StatefulWidget {
 class _MyOrdersViewState extends State<MyOrdersView> {
   int currentIndex = 0;
   List<Widget> pages = [
-    MyOrdersNowPage(),
-    MyOrdersFinishedPage(),
+    const MyOrdersNowPage(),
+    const MyOrdersFinishedPage(),
   ];
   List<String> labels = [
     "الحاليه",

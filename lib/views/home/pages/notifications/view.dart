@@ -5,7 +5,6 @@ import 'package:thimar/core/design/app_image.dart';
 import 'package:thimar/features/notifications/cubit.dart';
 import 'package:thimar/features/notifications/model.dart';
 import 'package:thimar/features/notifications/states.dart';
-import '../../../../gen/assets.gen.dart';
 
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
@@ -56,7 +55,6 @@ class _NotificationItem extends StatefulWidget {
   final List<Notifications> model;
   final int index;
   const _NotificationItem({
-    super.key,
     required this.model,
     required this.index,
   });
@@ -94,7 +92,7 @@ class _NotificationItemState extends State<_NotificationItem> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
                 widget.model[widget.index].title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xff000000),
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
@@ -105,14 +103,14 @@ class _NotificationItemState extends State<_NotificationItem> {
               ),
               Text(
                 widget.model[widget.index].body,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xff989898),
                   fontSize: 10,
                 ),
               ),
               Text(
                 widget.model[widget.index].createdAt,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xff091022),
                   fontSize: 10,
                 ),

@@ -1,6 +1,6 @@
 class LogOutData {
   late final String status;
-  late final Null data;
+  late final void data;
   late final String message;
 
   LogOutData.fromJson(Map<String, dynamic> json) {

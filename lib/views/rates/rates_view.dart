@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:thimar/features/rates/model.dart';
 
-import '../../core/design/app_image.dart';
 
 class RatesView extends StatelessWidget {
   RatesView({

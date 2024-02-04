@@ -1,5 +1,3 @@
-import 'package:thimar/features/cart/model.dart';
-import 'package:thimar/views/about_app/model.dart';
 
 class AboutAppStates {}
 

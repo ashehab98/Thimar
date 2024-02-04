@@ -16,7 +16,7 @@ class AddAddressView extends StatefulWidget {
 
 class _AddAddressViewState extends State<AddAddressView> {
   Set<Marker> markers = {
-    Marker(
+    const Marker(
       markerId: MarkerId("1"),
       position: LatLng(31.0191987, 31.3884559),
     ),
@@ -33,7 +33,7 @@ class _AddAddressViewState extends State<AddAddressView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("إضافة عنوان"),
+        title: const Text("إضافة عنوان"),
         leading: Container(
           height: 32.h,
           width: 32.w,
@@ -45,7 +45,7 @@ class _AddAddressViewState extends State<AddAddressView> {
           ),
           child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.arrow_back_ios),
+              icon: const Icon(Icons.arrow_back_ios),
               color: Theme.of(context).primaryColor),
         ),
       ),
@@ -55,9 +55,9 @@ class _AddAddressViewState extends State<AddAddressView> {
           child: GoogleMap(
             circles: {
               Circle(
-                circleId: CircleId("1"),
+                circleId: const CircleId("1"),
                 fillColor: Theme.of(context).primaryColor.withOpacity(.3),
-                center: LatLng(31.0191987, 31.3884559),
+                center: const LatLng(31.0191987, 31.3884559),
                 radius: 10000,
                 strokeColor: Colors.white,
               ),
@@ -84,7 +84,7 @@ class _AddAddressViewState extends State<AddAddressView> {
               print("0000000000000000000000000000000000");
               markers.add(
                 Marker(
-                  markerId: MarkerId("1"),
+                  markerId: const MarkerId("1"),
                   position: LatLng(argument.latitude, argument.longitude),
                 ),
               );
@@ -92,7 +92,7 @@ class _AddAddressViewState extends State<AddAddressView> {
               print(argument.latitude);
               print(argument.longitude);
             },
-            initialCameraPosition: CameraPosition(
+            initialCameraPosition: const CameraPosition(
               target: LatLng(31.0360543,31.3697129),
               zoom: 14,
             ),
@@ -101,9 +101,9 @@ class _AddAddressViewState extends State<AddAddressView> {
         if (myAddress != null) Text(myAddress!),
         if (myMarkerLocation != null) Text(myMarkerLocation!),
       ]),
-      floatingActionButton: FloatingActionButton(child: Text("GO"),onPressed: () {
+      floatingActionButton: FloatingActionButton(child: const Text("GO"),onPressed: () {
         goToLocation(
-          location: LatLng(37.43296265331129, -122.08832357078792),
+          location: const LatLng(37.43296265331129, -122.08832357078792),
         );
         
       }),
@@ -119,7 +119,7 @@ class _AddAddressViewState extends State<AddAddressView> {
     );
     markers.add(
       Marker(
-        markerId: MarkerId("1"),
+        markerId: const MarkerId("1"),
         position: location,
       ),
     );

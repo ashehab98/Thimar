@@ -32,10 +32,10 @@ class _VideoAppState extends State<VideoApp> {
                   AspectRatio(
                     aspectRatio: _controller.value.aspectRatio,
                      child: GestureDetector(onTap: () async {
-                       final Uri _url = Uri.parse('tel:01096983611');
+                       final Uri url = Uri.parse('tel:01096983611');
 
-                       if (!await launchUrl(_url)) {
-                       throw Exception('Could not launch $_url');
+                       if (!await launchUrl(url)) {
+                       throw Exception('Could not launch $url');
                        }
                      },child: VideoPlayer(_controller),),
                   ),
@@ -55,7 +55,7 @@ class _VideoAppState extends State<VideoApp> {
                   ),
                 ],
               )
-            : Center(
+            : const Center(
                 child: Text("Something wrong with video"),
               ),
       ),
